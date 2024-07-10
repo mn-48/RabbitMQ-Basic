@@ -5,7 +5,8 @@ def on_message_received(ch, method, properties, body):
     print(f"received message: {body}")
 
 
-connection_parameters = pika.ConnectionParameters('localhost')
+# connection_parameters = pika.ConnectionParameters('localhost')
+connection_parameters = pika.URLParameters('amqps://XXXXX')
 connection = pika.BlockingConnection(connection_parameters)
 
 channel = connection.channel()

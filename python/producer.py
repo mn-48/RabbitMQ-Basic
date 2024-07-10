@@ -1,6 +1,9 @@
 import pika
 
-connection_parameters = pika.ConnectionParameters('localhost')
+# connection_parameters = pika.ConnectionParameters('localhost')
+connection_parameters = pika.URLParameters('amqps://XXXXX')
+
+
 
 connection = pika.BlockingConnection(connection_parameters)
 
