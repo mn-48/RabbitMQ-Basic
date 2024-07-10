@@ -1,0 +1,92 @@
+[
+    {
+        "label": "pika",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pika",
+        "description": "pika",
+        "detail": "pika",
+        "documentation": {}
+    },
+    {
+        "label": "on_message_received",
+        "kind": 2,
+        "importPath": "consumer",
+        "description": "consumer",
+        "peekOfCode": "def on_message_received(ch, (self, *args, **kwargs):\n    return super().(*args, **kwargs)\n)\nconnection_parameters = pika.ConnectionParameters('localhost')\nconnection = pika.BlockingConnection(connection_parameters)\nchannel = connection.channel()\nconnection.queue_declare(queue='letterbox')\nmessage = \"This is my first message\"\nchannel.basic_publish(exchange='', routing_key='letterbox', body=message)\nprint(f\"Sent message: {message}\")",
+        "detail": "consumer",
+        "documentation": {}
+    },
+    {
+        "label": "connection_parameters",
+        "kind": 5,
+        "importPath": "consumer",
+        "description": "consumer",
+        "peekOfCode": "connection_parameters = pika.ConnectionParameters('localhost')\nconnection = pika.BlockingConnection(connection_parameters)\nchannel = connection.channel()\nconnection.queue_declare(queue='letterbox')\nmessage = \"This is my first message\"\nchannel.basic_publish(exchange='', routing_key='letterbox', body=message)\nprint(f\"Sent message: {message}\")\nconnection.close()",
+        "detail": "consumer",
+        "documentation": {}
+    },
+    {
+        "label": "connection",
+        "kind": 5,
+        "importPath": "consumer",
+        "description": "consumer",
+        "peekOfCode": "connection = pika.BlockingConnection(connection_parameters)\nchannel = connection.channel()\nconnection.queue_declare(queue='letterbox')\nmessage = \"This is my first message\"\nchannel.basic_publish(exchange='', routing_key='letterbox', body=message)\nprint(f\"Sent message: {message}\")\nconnection.close()",
+        "detail": "consumer",
+        "documentation": {}
+    },
+    {
+        "label": "channel",
+        "kind": 5,
+        "importPath": "consumer",
+        "description": "consumer",
+        "peekOfCode": "channel = connection.channel()\nconnection.queue_declare(queue='letterbox')\nmessage = \"This is my first message\"\nchannel.basic_publish(exchange='', routing_key='letterbox', body=message)\nprint(f\"Sent message: {message}\")\nconnection.close()",
+        "detail": "consumer",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "kind": 5,
+        "importPath": "consumer",
+        "description": "consumer",
+        "peekOfCode": "message = \"This is my first message\"\nchannel.basic_publish(exchange='', routing_key='letterbox', body=message)\nprint(f\"Sent message: {message}\")\nconnection.close()",
+        "detail": "consumer",
+        "documentation": {}
+    },
+    {
+        "label": "connection_parameters",
+        "kind": 5,
+        "importPath": "producer",
+        "description": "producer",
+        "peekOfCode": "connection_parameters = pika.ConnectionParameters('localhost')\nconnection = pika.BlockingConnection(connection_parameters)\nchannel = connection.channel()\nconnection.queue_declare(queue='letterbox')\nmessage = \"This is my first message\"\nchannel.basic_publish(exchange='', routing_key='letterbox', body=message)\nprint(f\"Sent message: {message}\")\nconnection.close()",
+        "detail": "producer",
+        "documentation": {}
+    },
+    {
+        "label": "connection",
+        "kind": 5,
+        "importPath": "producer",
+        "description": "producer",
+        "peekOfCode": "connection = pika.BlockingConnection(connection_parameters)\nchannel = connection.channel()\nconnection.queue_declare(queue='letterbox')\nmessage = \"This is my first message\"\nchannel.basic_publish(exchange='', routing_key='letterbox', body=message)\nprint(f\"Sent message: {message}\")\nconnection.close()",
+        "detail": "producer",
+        "documentation": {}
+    },
+    {
+        "label": "channel",
+        "kind": 5,
+        "importPath": "producer",
+        "description": "producer",
+        "peekOfCode": "channel = connection.channel()\nconnection.queue_declare(queue='letterbox')\nmessage = \"This is my first message\"\nchannel.basic_publish(exchange='', routing_key='letterbox', body=message)\nprint(f\"Sent message: {message}\")\nconnection.close()",
+        "detail": "producer",
+        "documentation": {}
+    },
+    {
+        "label": "message",
+        "kind": 5,
+        "importPath": "producer",
+        "description": "producer",
+        "peekOfCode": "message = \"This is my first message\"\nchannel.basic_publish(exchange='', routing_key='letterbox', body=message)\nprint(f\"Sent message: {message}\")\nconnection.close()",
+        "detail": "producer",
+        "documentation": {}
+    }
+]
