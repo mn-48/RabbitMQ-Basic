@@ -13,12 +13,11 @@ channel = connection.channel()
 channel.queue_declare(queue='letterbox')
 
 
-
-channel.basic_consume(queue="letterbox", auto_ack=True, on_message_callback=on_message_received)
+channel.basic_consume(queue="letterbox", auto_ack=True,
+                      on_message_callback=on_message_received)
 
 
 print("starting consuming")
 
 
 channel.start_consuming()
-

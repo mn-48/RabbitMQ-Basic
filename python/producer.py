@@ -1,6 +1,7 @@
 import pika
 
 connection_parameters = pika.ConnectionParameters('localhost')
+
 connection = pika.BlockingConnection(connection_parameters)
 
 channel = connection.channel()
