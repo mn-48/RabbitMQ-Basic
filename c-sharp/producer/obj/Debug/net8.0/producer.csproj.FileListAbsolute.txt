@@ -1,0 +1,15 @@
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/bin/Debug/net8.0/producer
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/bin/Debug/net8.0/producer.deps.json
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/bin/Debug/net8.0/producer.runtimeconfig.json
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/bin/Debug/net8.0/producer.dll
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/bin/Debug/net8.0/producer.pdb
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/producer.GeneratedMSBuildEditorConfig.editorconfig
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/producer.AssemblyInfoInputs.cache
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/producer.AssemblyInfo.cs
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/producer.csproj.CoreCompileInputs.cache
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/producer.sourcelink.json
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/producer.dll
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/refint/producer.dll
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/producer.pdb
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/producer.genruntimeconfig.cache
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/ref/producer.dll
