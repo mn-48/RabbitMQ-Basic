@@ -13,3 +13,6 @@
 /home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/producer.pdb
 /home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/producer.genruntimeconfig.cache
 /home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/ref/producer.dll
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/bin/Debug/net8.0/RabbitMQ.Client.dll
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/producer.csproj.AssemblyReference.cache
+/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/Debug/net8.0/producer.csproj.CopyComplete
