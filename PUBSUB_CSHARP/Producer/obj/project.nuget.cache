@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "CY9tqx8Ji7931Imz+azXqbsj+vhrYjipQYRaBO7yM4R0uws8vu0tvGpWQQpYI2jOqF5ZDc8ww7NIgQlAjEqd8Q==",
+  "success": true,
+  "projectFilePath": "/home/nazmul/Desktop/rabbitMQ/PUBSUB_CSHARP/Producer/Producer.csproj",
+  "expectedPackageFiles": [
+    "/home/nazmul/.nuget/packages/rabbitmq.client/6.8.1/rabbitmq.client.6.8.1.nupkg.sha512",
+    "/home/nazmul/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",
+    "/home/nazmul/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
