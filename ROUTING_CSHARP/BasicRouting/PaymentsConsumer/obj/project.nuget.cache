@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "2fq1A2C1ko8Q7gostWPDZFu7kK7KMFpoM+tu3XXTa73EZjmO9DcRmeCWN1gG9o7NLB0B0+/KNRUpPC+koKhfuA==",
+  "success": true,
+  "projectFilePath": "/home/nazmul/Desktop/rabbitMQ/ROUTING_CSHARP/BasicRouting/PaymentsConsumer/PaymentsConsumer.csproj",
+  "expectedPackageFiles": [
+    "/home/nazmul/.nuget/packages/rabbitmq.client/6.8.1/rabbitmq.client.6.8.1.nupkg.sha512",
+    "/home/nazmul/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",
+    "/home/nazmul/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
