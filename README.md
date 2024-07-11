@@ -55,7 +55,11 @@ dotnet new console
 
 # run project
 
-```dotnet run```
+```
+
+dotnet run
+
+```
 
 
 # add package
