@@ -1,6 +1,6 @@
 import pika, json, os, django
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "A.settings")
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "B.settings")
 django.setup()
 
 params = pika.URLParameters('amqps://tnrngeyk:TfaLRAKQ5U7shQGbkywlnv2dKlNJ2sRL@possum.lmq.cloudamqp.com/tnrngeyk')
@@ -9,11 +9,11 @@ connection = pika.BlockingConnection(params)
 
 channel = connection.channel()
 
-channel.queue_declare(queue='A')
+channel.queue_declare(queue='B')
 
 
 def callback(ch, method, properties, body):
-    print('Received in A')
+    print('Received in B')
     data = json.loads(body)
     print(data)
 
@@ -23,7 +23,7 @@ def callback(ch, method, properties, body):
     
 
 
-channel.basic_consume(queue='A', on_message_callback=callback, auto_ack=True)
+channel.basic_consume(queue='B', on_message_callback=callback, auto_ack=True)
 
 print('Started Consuming')
 
