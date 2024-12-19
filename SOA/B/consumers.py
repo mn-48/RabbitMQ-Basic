@@ -20,8 +20,6 @@ def callback(ch, method, properties, body):
     if properties.content_type == 'hello_world':
         # print(body)
         print(data.get("hello", "Empty Str"))
-    
-
 
 channel.basic_consume(queue='B', on_message_callback=callback, auto_ack=True)
 
