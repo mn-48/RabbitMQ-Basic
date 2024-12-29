@@ -37,12 +37,14 @@ collectstatic:
 runserver:
 	$(DOCKER_COMPOSE_RUN) $(MANAGE) runserver 0.0.0.0:8000
 
+.PHONY: createsuperuser
+createsuperuser:
+	$(DOCKER_COMPOSE_RUN) $(MANAGE) createsuperuser 
+
 .PHONY: all
 all: migrations migrate collectstatic runserver
 
-.PHONY: shell
-shell:
-	$(MANAGE) shell
+
 
 .PHONY: up
 up:
@@ -51,6 +53,19 @@ up:
 .PHONY: build
 build:
 	$(DOCKER_COMPOSE) up --build -d
+
+.PHONY: logs
+logs:
+	$(DOCKER_COMPOSE) logs
+
+
+.PHONY: sh
+sh:
+	$(DOCKER_COMPOSE_RUN) sh
+
+.PHONY: shell
+shell:
+	$(DOCKER_COMPOSE_RUN) $(MANAGE) shell	
 
 .PHONY: down
 down:
