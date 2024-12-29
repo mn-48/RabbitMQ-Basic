@@ -156,3 +156,27 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+# ------------------------- Custom User ---------------------
+AUTH_USER_MODEL = 'users.User'
+# -------------------------- GraphQL ------------------------
+GRAPHENE = {
+    'SCHEMA': 'core.schema.schema', # this file doesn't exist yet
+    'MIDDLEWARE': [
+        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+    ],
+}
+
+AUTHENTICATION_BACKENDS = [
+    'graphql_jwt.backends.JSONWebTokenBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]
+
+GRAPHQL_JWT = {
+    "JWT_VERIFY_EXPIRATION": True,
+    # optional
+    "JWT_LONG_RUNNING_REFRESH_TOKEN": True,
+}
