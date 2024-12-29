@@ -128,11 +128,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/nazmul/Desktop/rabbitMQ/c-sharp/consumer/consumer.csproj",
+      "projectUniqueName": "/home/nazmul/Desktop/RabbitMQ-Basic/c-sharp/consumer/consumer.csproj",
       "projectName": "consumer",
-      "projectPath": "/home/nazmul/Desktop/rabbitMQ/c-sharp/consumer/consumer.csproj",
+      "projectPath": "/home/nazmul/Desktop/RabbitMQ-Basic/c-sharp/consumer/consumer.csproj",
       "packagesPath": "/home/nazmul/.nuget/packages/",
-      "outputPath": "/home/nazmul/Desktop/rabbitMQ/c-sharp/consumer/obj/",
+      "outputPath": "/home/nazmul/Desktop/RabbitMQ-Basic/c-sharp/consumer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/nazmul/.nuget/NuGet/NuGet.Config"
@@ -180,7 +180,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.107/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

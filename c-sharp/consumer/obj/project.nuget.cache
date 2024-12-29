@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "R/AZmaSrIiG+Ia6YGkhPGiQWpyS9aM072NmKMqKqrOWyzMCzjrIytLPXs2hjBMSyiMaIPpQskQKamWbaM+zqtg==",
+  "dgSpecHash": "IgPHPImbscsIKe9pKNnFmubToF9y4Ym1N1I1ehRKGGbnihsmFyjbcWurTPK8k5aC8GLhXmI+qKi1qeb0tjI8xw==",
   "success": true,
-  "projectFilePath": "/home/nazmul/Desktop/rabbitMQ/c-sharp/consumer/consumer.csproj",
+  "projectFilePath": "/home/nazmul/Desktop/RabbitMQ-Basic/c-sharp/consumer/consumer.csproj",
   "expectedPackageFiles": [
     "/home/nazmul/.nuget/packages/rabbitmq.client/6.8.1/rabbitmq.client.6.8.1.nupkg.sha512",
     "/home/nazmul/.nuget/packages/system.memory/4.5.5/system.memory.4.5.5.nupkg.sha512",

@@ -128,11 +128,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/producer.csproj",
+      "projectUniqueName": "/home/nazmul/Desktop/RabbitMQ-Basic/c-sharp/producer/producer.csproj",
       "projectName": "producer",
-      "projectPath": "/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/producer.csproj",
+      "projectPath": "/home/nazmul/Desktop/RabbitMQ-Basic/c-sharp/producer/producer.csproj",
       "packagesPath": "/home/nazmul/.nuget/packages/",
-      "outputPath": "/home/nazmul/Desktop/rabbitMQ/c-sharp/producer/obj/",
+      "outputPath": "/home/nazmul/Desktop/RabbitMQ-Basic/c-sharp/producer/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/nazmul/.nuget/NuGet/NuGet.Config"
@@ -180,7 +180,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.107/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
