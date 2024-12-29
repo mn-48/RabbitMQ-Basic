@@ -1,4 +1,4 @@
-graphene-file-upload==1.3.0
+graphene-file-upload
 Django==5.1.4
 psycopg2==2.9.10
 psycopg-binary==3.2.3
