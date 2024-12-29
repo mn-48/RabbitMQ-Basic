@@ -40,12 +40,19 @@ DEFAULT_APPS = [
 ]
 
 
+THIRDY_PARTY_APPS = [
+    'graphene_django',
+    # refresh tokens are optional
+    'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
+    'phonenumber_field',
+]
+
+
 LOCAL_APPS = ['users',]
 
 
-THIRD_PARTY_APPS = []
 
-INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRD_PARTY_APPS
+INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRDY_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

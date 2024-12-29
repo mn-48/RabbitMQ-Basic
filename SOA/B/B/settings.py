@@ -30,7 +30,9 @@ ALLOWED_HOSTS = ['*']
 
 # Application definition
 
-INSTALLED_APPS = [
+# Application definition
+
+DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,6 +40,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+
+THIRDY_PARTY_APPS = [
+    'graphene_django',
+    # refresh tokens are optional
+    'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
+    'phonenumber_field',
+]
+
+
+LOCAL_APPS = ['users',]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
