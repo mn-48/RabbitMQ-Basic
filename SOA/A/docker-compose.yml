@@ -21,3 +21,11 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - dba
+    
+  queue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: 'python -u consumer.py'
+    depends_on:
+      - dba

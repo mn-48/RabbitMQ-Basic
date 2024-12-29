@@ -1,5 +1,5 @@
 from django.db import models
-from apps.tenant.models import Tenant, Role
+# from apps.tenant.models import Tenant, Role
 from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
@@ -14,8 +14,8 @@ class User(AbstractUser):
     address = models.TextField(null=True, blank=True)
     
 
-    tenant = models.ForeignKey(Tenant, blank=True, null=True, on_delete=models.CASCADE, related_name='users')
-    roles = models.ManyToManyField(Role, related_name='users')
+    # tenant = models.ForeignKey(Tenant, blank=True, null=True, on_delete=models.CASCADE, related_name='users')
+    # roles = models.ManyToManyField(Role, related_name='users')
 
     USERNAME_FIELD = "username"   # e.g: "username", "email"
     EMAIL_FIELD = "email"         # e.g: "email", "primary_email"
