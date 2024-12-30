@@ -1,0 +1,130 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: postgres-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: dba
+spec:
+  ports:
+    - port: 5432
+  selector:
+    app: dba
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dba
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dba
+  template:
+    metadata:
+      labels:
+        app: dba
+    spec:
+      containers:
+        - name: dba
+          image: postgres
+          env:
+            - name: POSTGRES_DB
+              value: "postgres"
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "postgres"
+          volumeMounts:
+            - name: postgres-storage
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: postgres-storage
+          persistentVolumeClaim:
+            claimName: postgres-pvc
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: projecta
+spec:
+  ports:
+    - port: 8000
+      targetPort: 8000
+      nodePort: 30500
+  selector:
+    app: projecta
+  type: NodePort
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projecta
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: projecta
+  template:
+    metadata:
+      labels:
+        app: projecta
+    spec:
+      containers:
+        - name: projecta
+          # image: {your_projecta_image}
+          image: projecta
+          command: ["./shell.sh"]
+          env:
+            - name: POSTGRES_NAME
+              value: "postgres"
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "postgres"
+          volumeMounts:
+            - name: code-volume
+              mountPath: /code
+      volumes:
+        - name: code-volume
+          hostPath:
+            # path: /path/to/your/code
+            path: /home/nazmul/code
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: queue
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: queue
+  template:
+    metadata:
+      labels:
+        app: queue
+    spec:
+      containers:
+        - name: queue
+          image: {your_queue_image}
+          command: ["python", "-u", "consumer.py"]
+          env:
+            - name: POSTGRES_NAME
+              value: "postgres"
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name: POSTGRES_PASSWORD
+              value: "postgres"
