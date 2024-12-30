@@ -11,6 +11,79 @@ chown -R $USER:$USER data
 chmod +x shell.sh
 
 
+
+
+# ---- kubernetes --------------
+
+### check version
+```
+kubectl version --client
+```
+
+### start minikube
+```
+minikube start
+```
+
+### minikube dashboard
+```
+minikube dashboard
+```
+
+### cluster info
+```
+kubectl cluster-info
+```
+
+### Deploy an Application 
+*1. Create a simple deployment (e.g., Nginx):*
+
+```
+kubectl create deployment hello-world --image=nginx
+```
+
+*2. Expose the application as a service:*
+```
+kubectl expose deployment hello-world --type=NodePort --port=80
+```
+
+*3. Get the Service details:*
+```
+kubectl get services
+```
+
+*4. Access the service:*
+
+```
+minikube service hello-world
+```
+
+
+# Useful Minikube Commands
+*Check Minikube status:*
+
+```
+minikube status
+```
+
+*Stop Minikube:*
+
+```
+minikube stop
+```
+
+*Delete Minikube:*
+
+```
+minikube delete
+```
+
+*View dashboard:*
+
+```
+minikube dashboard
+```
+
 #### settings.py
 
 1. STATIC_URL: URL where the user can access your static files from in the browser. The default is `/static/`, which means your files will be available at http://127.0.0.1:8000/static/ in development mode -- e.g., http://127.0.0.1:8000/static/css/main.css.

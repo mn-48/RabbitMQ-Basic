@@ -101,7 +101,7 @@ spec:
         - name: code-volume
           hostPath:
             # path: /path/to/your/code
-            path: /home/nazmul/code
+            path: /home/nazmul
 ---
 apiVersion: apps/v1
 kind: Deployment
