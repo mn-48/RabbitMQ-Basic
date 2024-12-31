@@ -16,5 +16,6 @@ spec:
       - name: hello-world-container
         # image: <your-dockerhub-username>/hello-world-app:v1
         image: mdnazmulhossain/hello-world-app:v1
+        imagePullPolicy: Always
         ports:
         - containerPort: 5000

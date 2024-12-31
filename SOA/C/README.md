@@ -9,6 +9,11 @@ docker run -p 5000:5000 hello-world-app
 
 
 
+docker tag hello-world-app mdnazmulhossain/hello-world-app:v1
+docker push mdnazmulhossain/hello-world-app:v1
+
+
+
 ### Push Image to dockerhub -------------
 docker tag local-image:tagname new-repo:tagname
 docker push new-repo:tagname
@@ -67,12 +72,6 @@ spec:
       - name: regcred
 
 ```
-
-
-
-
-
-
 
 
 
