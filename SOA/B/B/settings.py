@@ -53,6 +53,9 @@ THIRDY_PARTY_APPS = [
 LOCAL_APPS = ['users',]
 
 
+INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRDY_PARTY_APPS
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

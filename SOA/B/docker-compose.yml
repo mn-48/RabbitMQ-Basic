@@ -7,6 +7,7 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+
   projectb:
     build: .
     command: ./shell.sh
@@ -21,11 +22,11 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - dbb
-
-  queue:
+    
+  queueb:
     build:
       context: .
       dockerfile: Dockerfile
-    command: 'python -u consumer.py'
+    command: 'python -u consumers.py'
     depends_on:
       - dbb

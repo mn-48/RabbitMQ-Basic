@@ -26,6 +26,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: 'python -u consumer.py'
+    command: 'python -u consumers.py'
     depends_on:
       - dba
