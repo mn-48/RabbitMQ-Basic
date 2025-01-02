@@ -8,6 +8,11 @@ sudo chmod -R 755 data
 
 chown -R $USER:$USER data
 
+sudo chmod -R 755 SOA/A/data
+chown -R $USER:$USER SOA/A/data
+sudo chmod -R 755 SOA/B/data
+chown -R $USER:$USER SOA/B/data
+
 chmod +x shell.sh
 
 
