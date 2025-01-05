@@ -1,6 +1,6 @@
 import graphene
 from graphene import relay
-from graphene_django import DjangoObjectType
+from graphene_django import DjangoObjectType # type: ignore
 
 # from graphql_relay import from_global_id
 # from graphene_file_upload.scalars import Upload

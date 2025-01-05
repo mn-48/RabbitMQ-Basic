@@ -3,6 +3,8 @@ from graphql import GraphQLError
 from graphene_django.types import DjangoObjectType
 
 from django.contrib.auth import get_user_model
+from graphql_jwt.shortcuts import get_token #, create_refresh_token
+from graphql_jwt.refresh_token.shortcuts import refresh_token_lazy
 # from users.models import User
 
 from .nodes import UserNode
@@ -27,6 +29,8 @@ class RegisterUserMutation(graphene.Mutation):
         input = RegisterUserInput(required=True)
     
     user = graphene.Field(UserNode)
+    token = graphene.String()
+    refresh_token = graphene.String()
 
     @staticmethod
     def mutate(root, info, input):
@@ -54,7 +58,10 @@ class RegisterUserMutation(graphene.Mutation):
         # Save the user
         user.save()
 
-        return RegisterUserMutation(user=user)
+        token =  get_token(user)
+        # refresh_token = create_refresh_token(user)
+        refresh_token = refresh_token_lazy(user)
+        return RegisterUserMutation(user=user, token=token, refresh_token = refresh_token)
 
 # Add the mutation to the schema
 class UsersMutation(graphene.ObjectType):
