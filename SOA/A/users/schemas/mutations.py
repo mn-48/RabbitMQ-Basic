@@ -10,6 +10,8 @@ from graphql_jwt.refresh_token.shortcuts import refresh_token_lazy
 # from users.models import User
 
 from .nodes import UserNode
+from .producer import publish
+
 
 
 
@@ -61,6 +63,18 @@ class RegisterUserMutation(graphene.Mutation):
 
         # Save the user
         user.save()
+
+        new_user_data = {
+            "username": input.username,
+            "email":input.email,
+            "first_name":input.first_name,
+            "last_name":input.last_name,
+            "password": input.password,
+            "date_of_birth":input.date_of_birth,
+            "address":input.address,
+        }
+
+        publish("new_user_register", body=new_user_data)
 
         token =  get_token(user)
         # refresh_token = create_refresh_token(user)

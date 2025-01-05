@@ -21,8 +21,6 @@ def publish(method, body):
     
     # print("Hello")
 
-
-
 if __name__=="__main__":
     publish("hello_world", body={
         "hello": "world"
