@@ -16,5 +16,38 @@ class UserNode(DjangoObjectType):
         filter_fields = ['id',]
         exclude = ['password']  # Exclude the password field
         interfaces = (relay.Node,)
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

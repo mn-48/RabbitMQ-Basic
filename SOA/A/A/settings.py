@@ -45,6 +45,7 @@ THIRDY_PARTY_APPS = [
     # refresh tokens are optional
     'graphql_jwt.refresh_token.apps.RefreshTokenConfig',
     'phonenumber_field',
+    'django_filters',
 ]
 
 
@@ -177,7 +178,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.User'
 # -------------------------- GraphQL ------------------------
 GRAPHENE = {
-    'SCHEMA': 'core.schema.schema', # this file doesn't exist yet
+    'SCHEMA': 'A.schema.schema', # this file doesn't exist yet
     'MIDDLEWARE': [
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
     ],

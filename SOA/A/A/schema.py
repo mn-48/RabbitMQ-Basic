@@ -1,6 +1,7 @@
 import graphene
 import graphql_jwt
 from users.schemas.queries import UsersQuery
+from users.schemas.mutations import UsersMutation
 
 
 class AuthMutation(graphene.ObjectType):
@@ -11,18 +12,25 @@ class AuthMutation(graphene.ObjectType):
     revoke_token = graphql_jwt.Revoke.Field()
 
 
-
 class Query(
-    UsersQuery,
+        UsersQuery,
+        graphene.ObjectType):
+    pass
+
+
+class Mutation(
+    AuthMutation, 
+    UsersMutation, 
     graphene.ObjectType):
     pass
 
-class Mutation(AuthMutation, graphene.ObjectType):
-   pass
+
+
 # class Subscription(graphene.ObjectType):
 #    pass
 
 # schema = graphene.Schema(query=Query, mutation=Mutation,
 #                          subscription=Subscription)
+
 
 schema = graphene.Schema(query=Query, mutation=Mutation)
