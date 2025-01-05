@@ -1,5 +1,7 @@
 import graphene
+from django.conf import settings 
 from graphql import GraphQLError
+from datetime import datetime, timedelta
 from graphene_django.types import DjangoObjectType
 
 from django.contrib.auth import get_user_model
@@ -29,8 +31,10 @@ class RegisterUserMutation(graphene.Mutation):
         input = RegisterUserInput(required=True)
     
     user = graphene.Field(UserNode)
+    payload = graphene.JSONString()
     token = graphene.String()
     refresh_token = graphene.String()
+    refresh_expires_in = graphene.Int()
 
     @staticmethod
     def mutate(root, info, input):
@@ -61,7 +65,21 @@ class RegisterUserMutation(graphene.Mutation):
         token =  get_token(user)
         # refresh_token = create_refresh_token(user)
         refresh_token = refresh_token_lazy(user)
-        return RegisterUserMutation(user=user, token=token, refresh_token = refresh_token)
+
+
+         # Generate JWT token
+        # orig_iat = datetime.utcnow()
+        orig_iat = datetime.now() 
+        exp = orig_iat + settings.GRAPHQL_JWT["JWT_EXPIRATION_DELTA"]  # Token expiration (7 days)
+        payload = {
+            "username": user.username,
+            "exp": int(exp.timestamp()),
+            "origIat": int(orig_iat.timestamp()),
+        }
+
+        refresh_expires_in = int((orig_iat + settings.GRAPHQL_JWT["JWT_REFRESH_EXPIRATION_DELTA"]).timestamp())  # Refresh token expiration (14 days)
+
+        return RegisterUserMutation(payload=payload, user=user, token=token, refresh_token = refresh_token)
 
 # Add the mutation to the schema
 class UsersMutation(graphene.ObjectType):
