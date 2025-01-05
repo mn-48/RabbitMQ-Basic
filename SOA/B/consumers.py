@@ -38,6 +38,7 @@ def callback(ch, method, properties, body):
             date_of_birth = data["date_of_birth"],
             address = data["address"],
         )
+        user.save()
         user.set_password(data["password"])
         user.save()
 
