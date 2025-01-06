@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 from pathlib import Path
-from datetime import datetime, timedelta
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -51,7 +51,6 @@ THIRDY_PARTY_APPS = [
 
 
 LOCAL_APPS = ['users',]
-
 
 
 INSTALLED_APPS = DEFAULT_APPS + LOCAL_APPS + THIRDY_PARTY_APPS
@@ -107,7 +106,6 @@ DATABASES = {
         'PORT': 5432,
     }
 }
-
 
 
 # Password validation
@@ -167,19 +165,17 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
 # ------------------------- Custom User ---------------------
 AUTH_USER_MODEL = 'users.User'
 # -------------------------- GraphQL ------------------------
 GRAPHENE = {
-    'SCHEMA': 'A.schema.schema', # this file doesn't exist yet
+    'SCHEMA': 'A.schema.schema',  # this file doesn't exist yet
     'MIDDLEWARE': [
         'graphql_jwt.middleware.JSONWebTokenMiddleware',
     ],

@@ -1,13 +1,12 @@
 services:
-  # dbb:
-  #   image: postgres
-  #   volumes:
-  #     - ./data/db:/var/lib/postgresql/data
-  #   environment:
-  #     - POSTGRES_DB=postgres
-  #     - POSTGRES_USER=postgres
-  #     - POSTGRES_PASSWORD=postgres
-
+  dbb:
+    image: postgres
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
   projectb:
     build: .
     command: ./shell.sh
@@ -15,18 +14,18 @@ services:
     volumes:
       - .:/code
     ports:
-      - "8051:8051"
-    # environment:
-    #   - POSTGRES_NAME=postgres
-    #   - POSTGRES_USER=postgres
-    #   - POSTGRES_PASSWORD=postgres
-    # depends_on:
-    #   - dbb
+      - "8051:8000"
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    depends_on:
+      - dbb
     
-  queueb:
+  queue:
     build:
       context: .
       dockerfile: Dockerfile
     command: 'python -u consumers.py'
-    # depends_on:
-    #   - dbb
+    depends_on:
+      - dbb
