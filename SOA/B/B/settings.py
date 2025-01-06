@@ -106,10 +106,22 @@ DATABASES = {
         'NAME': os.environ.get('POSTGRES_NAME'),
         'USER': os.environ.get('POSTGRES_USER'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
-        'HOST': 'dbb',
+        'HOST': 'db',
         'PORT': 5432,
     }
 }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',          # POSTGRES_DB এর মান
+#         'USER': 'postgres',          # POSTGRES_USER এর মান
+#         'PASSWORD': 'postgres',      # POSTGRES_PASSWORD এর মান
+#         'HOST': 'db',                # Docker Compose-এ সার্ভিস নেম
+#         'PORT': '5432',              # ডিফল্ট PostgreSQL পোর্ট
+#     }
+# }
 
 
 # Password validation

@@ -1,5 +1,5 @@
 services:
-  dbb:
+  db:
     image: postgres
     volumes:
       - ./data/db:/var/lib/postgresql/data
@@ -20,7 +20,7 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
     depends_on:
-      - dbb
+      - db
     
   queue:
     build:
@@ -28,4 +28,4 @@ services:
       dockerfile: Dockerfile
     command: 'python -u consumers.py'
     depends_on:
-      - dbb
+      - db
