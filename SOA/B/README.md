@@ -9,9 +9,12 @@ sudo chmod -R 755 data
 chown -R $USER:$USER data
 
 sudo chmod -R 755 data
+
 chown -R $USER:$USER data
 
+# ------------------
 sudo chmod -R 755 data
+
 chown -R $USER:$USER data
 
 # ----------------------------------------------
