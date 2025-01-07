@@ -26,8 +26,12 @@ kubectl get secret
 kubectl describe secret shop-secret
 ```
 
-#### describe secret vars
+#### run deployment.yml
 ```
 kubectl apply -f deployment.yml
+```
+#### describe secret vars
+```
+kubectl apply -f svc.yml
 ```
 
