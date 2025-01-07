@@ -30,8 +30,12 @@ kubectl describe secret shop-secret
 ```
 kubectl apply -f deployment.yml
 ```
-#### describe secret vars
+#### run svc.yml
 ```
 kubectl apply -f svc.yml
 ```
 
+####
+```
+kubectl apply -f postgres-pv.yml
+```
