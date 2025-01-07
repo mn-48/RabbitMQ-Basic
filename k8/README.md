@@ -20,3 +20,14 @@ kubectl create secret generic shop-secret --from-env-file=.env-kuber
 ```
 kubectl get secret
 ```
+
+#### describe secret vars
+```
+kubectl describe secret shop-secret
+```
+
+#### describe secret vars
+```
+kubectl apply -f deployment.yml
+```
+

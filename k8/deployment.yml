@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shop-app
+  labels:
+    app: shop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shop
+  template:
+    metadata:
+      labels:
+        app: shop
+    spec:
+      containers:
+      - image: mdnazmulhossain/shop:v1
+        name: shop
+        envForm:
+        - secretRef:
+          name:  shop-secret
+        - configMapRef:
+          name:  shop-config
+        ports:
+        - containerPort: 80
+          name:  gunicorn
+        volumeMounts:
+          - name:  media-volume-mount
+            mountPath: /app/shop/media
+
+    volumes:
+      - name:  media-volume-mount
+        mountPath:  media-pvc
+
